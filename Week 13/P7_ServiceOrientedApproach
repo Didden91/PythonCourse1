@@ -1,0 +1,7 @@
+Most web applications use services
+They use services from other applications
+eg. Charging money from your bank
+Hotel Reservation Systems
+
+Services publish the RULES applications must follow to make use of their services
+These are called Application Programming Interfaces (APIs)
