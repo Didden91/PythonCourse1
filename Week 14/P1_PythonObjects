@@ -1,0 +1,35 @@
+A program is made up of many cooperating objects
+
+Instead of being the “whole program” - each object is a little “island” within the program and cooperatively working with other objects
+
+A program is made up of one or more objects working together - objects make use of each other’s capabilities
+
+An Object is a bit of self-contained Code and Data
+A key aspect of the Object approach is to break the problem into smaller understandable parts (divide and conquer)
+Objects have boundaries that allow us to ignore un-needed detail
+
+We have been using objects ALL ALONG!: String Objects, Integer Objects, Dictionary Objects, List Objects...
+
+
+Objects hide detail - they allow us to ignore the detail of the “rest of the program”.
+
+The maker of an object does not necessarily care what you do with an object, they care about whether it does what it should do.
+
+The programmer can get along just fine by calling an object, letting it work its magic and getting something back, you don't
+have to understand the inner workings. As long as you read the documentation and look at how an object functions, you're fine.
+
+Some important DEFINITIONS!
+Using dogs as an example:
+
+Class - a template  - dog
+Method or Message - A defined capability of a class - bark()
+Field or attribute- A bit of data in a class  - length of the dog
+Object or Instance - A particular instance of a class - Lassie
+
+A class is a template, it is NOT the thing itself.
+A Method is really just like a function in your program except it lives INSIDE the class
+Field or attributes is DATA that lives inside the class, they are VARIABLES that are defined within the class
+Object is the particular instance, the specific version of something
+
+Dog is abstract, can bark, has a length
+Lassie is a dog, can bark, and is 3 ft. long
