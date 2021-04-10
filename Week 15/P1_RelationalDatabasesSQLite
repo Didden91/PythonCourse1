@@ -1,0 +1,34 @@
+Time to learn a NEW programming language: SQL
+
+Relational databases model data by storing ROWS and COLUMNS in tables.
+The power of relational databases lies in its ability to efficiently retrieve data from those tables
+and in particular where there are MULTIPLE tables and relationships within in  query.
+
+TERMINOLOGY
+
+Database - contains many tables
+Relation (or table) - contains tuples and attributes
+Tuple (or row) - a set of fields that generally represents an “object” like a person or a music track
+Attribute (also column or field) - one of possibly many elements of data corresponding to the object represented by the row
+
+For now, as programmers we can just think about databases as advanced spreadsheets
+
+SQL:
+
+Structured Query Language (SQL) is the language we use to issue commands to the database
+-  Create data (a.k.a Insert)
+-  Retrieve data
+-  Update data
+-  Delete data
+
+Also known as CRUD operations:
+(C)reate (R)etrieve (U)pdate (D)elete
+
+Common Database Systems:
+
+Three major Database Management Systems in wide use
+-  Oracle - Large, commercial, enterprise-scale, very very tweakable
+-  MySql - Simpler but very fast and scalable - commercial open source
+-  SqlServer - Very nice - from Microsoft (also Access)
+Many other smaller projects, free and open source
+-  HSQL, SQLite, Postgres, ...

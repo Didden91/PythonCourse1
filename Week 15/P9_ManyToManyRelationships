@@ -1,0 +1,41 @@
+So far, all we've done is what's called a One-to-many relationship in databases:
+There are many tracks associated with one album
+There are many albums associated with one artist
+There are many tracks associated with one genre
+
+The One-to-Many or Many-to-One relationship is probably the most common thing in databases
+But sometimes you just can't model things with a Many-to-One relationship
+Example:
+A book can have many authors
+and an authors can have many books
+
+For this we can use a CONNECTION table also known as JUNCTION Table
+We need to add this "connection" table with two foreign keys
+There is usually no separate primary key
+
+Example is a learning management system, there are many students and many courses
+courses have many students, students have many courses
+so in the middle you can place a Membership table
+The table only contains foreign keys, NO primary keys
+You probably want a UNIQUENESS constraint to prevent duplicates and errors.
+This constraint should then come from the Combination of the two keys, seeing as the keys themselves are both foreign and not in the table itself
+
+We can start to build it like this:
+
+CREATE TABLE User (
+    id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    name   TEXT UNIQUE,
+    email  TEXT
+) ;
+
+CREATE TABLE Course (
+    id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    title  TEXT UNIQUE
+) ;
+
+CREATE TABLE Member (
+    user_id     INTEGER,
+    course_id   INTEGER,
+	role        INTEGER,
+    PRIMARY KEY (user_id, course_id)
+) ;

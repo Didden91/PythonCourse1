@@ -1,0 +1,33 @@
+Building a Data Model:
+
+Drawing a picture of the data objects for our application and then figuring out how to represent the objects and their relationships
+Basic Rule: Don’t put the same string data in twice - use a relationship instead
+When there is one thing in the “real world” there should be one copy of that thing in the database
+
+Representing Relationships in a Database:
+
+Database Normalization (3NF):
+
+3NF = Third Normal Form
+
+There is TONS of database theory - way too much to understand without excessive predicate calculus
+Do not replicate data - reference data - point at data
+Use INTEGERS for KEYS and for references
+Add a special “key” COLUMN to each table which we will make references to.
+By convention, many programmers call this column “id”
+
+There are Three Kinds of Keys:
+
+Primary key - generally an integer auto-increment field
+Logical key - What the outside world uses for lookup
+Foreign key - generally an integer key pointing to a row in another table
+
+Some rules for keys:\
+Best practices:
+
+- Never use your logical key as the primary key
+- Logical keys can and do change, albeit slowly
+- Relationships that are based on matching string fields are less efficient than integers
+
+A foreign key is when a table has a column that contains a key which points to the primary key of another table.
+When all primary keys are integers, then all foreign keys are integers - this is good - very good

@@ -1,0 +1,44 @@
+Now, once we've entered all our data and keys and linked them together, it looks great in the database.
+But for the user it's just a bunch of data. To pull it all out and paste it together to something more useable we can use:
+JOIN
+
+The JOIN operation links across several tables as part of a select operation
+You must tell the JOIN how to use the keys that make the connection between the tables using an ON clause
+
+An example:
+
+SELECT Album.title, Artist.name FROM Album JOIN Artist ON Album.artist_id = Artist.id
+
+Let's dissect this:
+Album.title means from the table 'Album' I want the field 'title'
+Artist.name means from the table 'Artist' I want the field 'name'
+
+FROM Album JOIN Artist, means from the table Album take the following data and use it in the table Artist
+ON Album.artist_id = Artist.id, execute the previously mentioned command on THIS data and do this with it.
+In other words, how these tables are from now on going to be LINKED
+In this case that if means the data (integer) found in the table Album in the artist_id field, is the same as that in the table called Artist,
+within the field called id, THEN JOIN these two together
+
+The ON clause is IMPORTANT
+It means, in this case, only join these two rows together if the numbers MATCH
+Without the ON it is just going to list every possible combination
+
+Now comes the MONSTER:
+
+
+SELECT Track.title, Artist.name, Album.title, Genre.name
+FROM Track JOIN Genre JOIN Album JOIN Artist
+    ON Track.genre_id = Genre.id AND Track.album_id = Album.id
+    AND Album.artist_id = Artist.id
+
+
+ This is CONNECTING ALL FOUR TABLES
+ All this does is look at the list of ids and if they match, link them together, so that in the end a nice output can be generated
+
+ Crucial here is the foreign key, primary key concept once again.
+ So after the ON clause comes a list of FOREIGN KEY linked to PRIMARY KEY.
+ Because me named the mnemonically they are easy to recognize!
+ First foreign key is genre_id. Easy, because it refers to the Genre table. so link that to Genre table (the PRIMARY key, AKA the table that holds the data), id field.
+ Next comes Track.album_id. Again that's foreign, and refers to the Album Table. Link in to the Album table (the primary key), and the id field in that Table, so: Album.id
+
+This looks overwhelming, it really helps having a visual representation of this, a diagram which shows which data is stored where, gathered from where, which is the foreign and which is the primary key for each item, etc.

@@ -1,0 +1,57 @@
+We create a database
+add some tables
+We can then use the browser to add item,
+but we can also go to the Execute SQL tab to run SQL code ourselves!
+SQL: INSERT
+
+inserting data goes like this:
+
+INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu')
+
+You can paste that in the execute SQL tab and hit the 'run' button
+Now if you take more than one like this:
+
+INSERT INTO Users (name, email) VALUES ('Colleen', 'cvl@umich.edu')
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu')
+INSERT INTO Users (name, email) VALUES ('Sally', 'a1@umich.edu')
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu')
+
+Put a SEMICOLON ; after each, then you can run all four in one go
+
+In time we can write Python programs that perform this insert command over and over again where need be.
+
+SQL: DELETE
+
+Deleting goes like this:
+
+DELETE FROM Users WHERE email='ted@umich.edu'
+
+This basically says, from the table users delete every entry with the email ted@umich.edu
+
+SQL: Update
+
+Updating goes like this:
+
+UPDATE Users SET name="Charles" WHERE email='csev@umich.edu'
+
+This says, in the table users, set the name to charles for every instance of the email csev@umich.edu
+
+Retrieving Records in SQL: Select
+
+The select statement retrieves a group of records - you can either retrieve all the records
+or a subset of the records with a WHERE clause
+So:
+SELECT * FROM Users
+or:
+SELECT * FROM Users WHERE email='csev@umich.edu'
+
+Note, unlike in Python, in a SQL WHERE clause we use a single equal sign to indicate a test for equality rather than a double equal sign. Other logical operations allowed in a WHERE clause include <, >, <=, >=, !=, as well as AND and OR and parentheses to build your logical expressions.
+
+Doing this in the execute tab will show what these commands return
+
+Sorting with ORDER BY
+
+You can add an ORDER BY clause to SELECT statements to get the results sorted in ascending or descending order
+
+SELECT * FROM Users ORDER BY email
+SELECT * FROM Users ORDER BY name DESC
